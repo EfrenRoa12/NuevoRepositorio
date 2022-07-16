@@ -1,1 +1,1 @@
-console.log("imprime hola")
+console.log("welcome to js")
