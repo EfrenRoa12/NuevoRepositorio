@@ -1,1 +1,1 @@
-prompt("hola")
+console.log("imprime hola")
