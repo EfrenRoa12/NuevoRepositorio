@@ -8,21 +8,20 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
-    <h1>
-        Este ejemplo devuelve la suma de los dos parámetros de un método :
+    <h2> Estructura de una aplicación web JavaEE</h2>
+    <p>
+     
+Una aplicación web JavaEE que utilice servlets o páginas JSP debe tener una estructura de ficheros y directorios determinada:
 
-        public class Main {
-          static int myMethod(int x) {
-            return 5 + x;
-          }
-        
-          public static void main(String[] args) {
-            System.out.println(myMethod(3));
-          }
-        }
-        // Outputs 8 (5 + 3)
-    </h1>
+En el directorio raíz de la aplicación se colocan las páginas HTML o JSP (podemos dividirlas también en directorios si queremos)
+Colgando del directorio inicial de la aplicación, se tiene un directorio WEB-INF, que contiene la información Web relevante para la aplicación. Esta información se divide en:
+
+Fichero descriptor de despliegue de la aplicación: es el fichero descriptor de la aplicación web. Es un fichero XML (llamado web.xml) que contiene información genérica sobre la aplicación. Lo veremos con más detalle más adelante
+Subdirectorio classes: en él irán todas las clases Java utilizadas en la aplicación (ficheros .class), es decir, clases externas a la API de Java que se utilicen en las páginas JSP, servlets, etc. Las clases deberán mantener la estructura de paquetes, es decir, si queremos colocar la clase paquete1.subpaquete1.MiClase dentro de classes, se quedará almacenada en el directorio classes/paquete1/subpaquete1/MiClase.
+Subdirectorio lib: aquí colocaremos las clases Java que estén empaquetadas en ficheros JAR (es decir, colocaremos los ficheros JAR de nuestra aplicación Web, y las librerías ajenas a la API de JDK o de servlets y JSP que se necesiten)
+El resto de elementos de la aplicación (imágenes, etc), podemos estructurarlos como nos convenga.
+Notar que se separan los ficheros .class de los ficheros JAR, colocando los primeros en el directorio classes y los segundos en lib.
+    </p>
     <script src="index.js"></script>
 </body>
 </html>
